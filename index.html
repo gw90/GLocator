@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html>
+  <head>
+  <a href="http://developer.gregorywickham.com">Main</a><br>
+    <title>GLocator</title>
+    <script>
+      
+      var police = [
+        "<p>33rd  Precinct <br>Phone: (212) 927-3200<br> 2207 Amsterdam Avenue <br> New York, NY 10032</p>",
+        "<p>34th Precinct <br>Phone: (212) 927-9711<br> 4295 Broadway<br> New York, NY 10033</p>",
+        "<p>30th Precinct <br>Phone: (212) 690-8811<br> 451 West 151st Street,<br> New York, NY 10028</p>",
+        "<p>32nd Precinct <br>Phone: (212) 690-6311<br> 250 West 135th Street,<br>  New York, NY 10030</p>",
+        "<p>36th Precinct <br>Phone: (212) 678-1311<br> 520 West 126th Street,<br> New York, NY 10027</p>",
+        "<p>28th Precinct <br>Phone: (212) 678-1611<br> 2271-89 8th Avenue,<br> New York, NY 10027</p>",
+        "<p>25th Precinct <br>Phone: (212) 860-6511<br> 120 East 119th Street,<br> New York, NY 10035</p>",
+        "<p>24th Precinct <br>Phone: (212) 678-1811<br> 151 West 100th Street,<br> New York, NY 10025</p>",
+        "<p>23rd Precinct <br>Phone: (212) 860-6411<br> 162 East 102 Street,<br> New York, NY 10029</p>",
+        "<p>Central Pack Precinct <br>Phone: (212) 570-4820<br> 86th Street & Transverse Road,<br> New York, NY 10024</p>",
+        "<p>20th Precinct <br>Phone: (212) 580-6411<br> 120 West 82nd Street<br>, New York, NY 10024</p>",
+        "<p>19th Precinct<br>Phone: (212) 452-0600<br> 153 East 67th Street,<br> New York, NY 10021</p>",
+        "<p>Midtown North Precinct<br>Phone: (212) 760-8300<br> 306 West 54th Street,<br> New York, NY 10019</p>",
+        "<p>17th Precinct<br>Phone: (212) 826-3211<br> 167 East 51st Steet<br> New York, NY 10019</p>",
+        "<p>Midtown South Precinct<br>Phone: (212) 239-9811<br> 357 West 35th Street,<br> New York, NY 10001</p>",
+        "<p>10th Precinct<br>Phone: (212) 741-8211<br> 230 West 20th Street<br>New York, NY 10011</p>",
+        "<p>13th Precinct<br>Phone: (212) 477-7411<br> 230 East 21st Street, <br>New York, NY 10010</p>",
+        "<p>6th Precinct<br>Phone: (212) 741-4811<br> 233 West 10th Street, <br>New York, NY, 10014</p>",
+        "<p>9th Precinct<br>Phone: (212) 477-7811<br> 130 Avenue C, <br>New York, NY, 10002</p>",
+        "<p>1st Precinct<br>Phone: (212) 334-0711<br> 16 Ericsson Place, <br>(212) 334-0711<br>New York, NY, 10013</p>",
+        "<p>5th Precinct<br>Phone: (212) 477-7311<br> 19 Elizabeth Street, <br>New York, NY, 10013</p>",
+        "<p>7th Precinct<br>Phone: (212) 334-0611<br> 19 1/2 Pitt Street,<br>New York, NY, 10002</p>",
+        "<p>Police Headquarters<br>Phone: (646) 610-5000<br> 1 Police Plaza,<br>New York, NY, 10038</p>",
+        "<p>Midtown South Precinct<br>Phone: (212) 239-9811<br> 357 West 35th Street,<br> New York, NY 10001</p>"];
+      
+    </script>
+    
+    <script>
+      
+      var go = function(){
+        
+        // alert(document.getElementById('mypct').innerHTML)
+        
+       // alert(police[1]);
+        var  $yourzip  = document.answer.zip.value;
+
+        for (i = 0; i < police.length; i++) {
+          var $n =police[i].indexOf($yourzip);
+          
+          if($n > -1){var $my = i;};
+        }
+        
+        document.getElementById('mypct').innerHTML = police[$my];
+        
+        
+        return false;
+
+        
+      };
+      
+    </script>
+    
+  </head>
+  <body>
+
+  
+  <div>
+  
+  <h1><center>GLocator</center></h1>
+  
+      <center>
+      
+      <form name="answer" onsubmit="return  go()" >
+      your zip code:
+       <select name="zip">
+      <option value="10001">10001</option>
+<option value="10001">10001</option>
+<option value="10002">10002</option>
+<option value="10002">10002</option>
+<option value="10010">10010</option>
+<option value="10011">10011</option>
+<option value="10013">10013</option>
+<option value="10014">10014</option>
+<option value="10019">10019</option>
+<option value="10021">10021</option>
+<option value="10024">10024</option>
+<option value="10025">10025</option>
+<option value="10027">10027</option>
+<option value="10028">10028</option>
+<option value="10029">10029</option>
+<option value="10030">10030</option>
+<option value="10032">10032</option>
+<option value="10033">10033</option>
+<option value="10035">10035</option>
+<option value="10038">10038</option>
+      </select>
+      
+
+<span  onclick = "go();" ><u> <button><b>Submit</b></button></u></span>
+    
+</form></center>
+
+
+
+<center><div id="mypct">  </div></center>
+
+
+    </div>
+  </body>
